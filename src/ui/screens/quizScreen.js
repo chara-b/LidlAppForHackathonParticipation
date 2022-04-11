@@ -1,30 +1,50 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Image, View, Text } from "react-native";
-
+import {
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  View,
+  Text,
+  StatusBar,
+} from "react-native";
+import CHeader from "../components/molecules/CHeader/CHeader";
+import QuizList from "../components/organisms/quizBuilder/quizBuilder";
+import CMenu from "../components/molecules/CMenu/CMenu";
 import { colors } from "../defaults/defaultStyles";
-
+const data = [
+  {
+    id: "1",
+    title: "First Item",
+  },
+  {
+    id: "2",
+    title: "Second Item",
+  },
+  {
+    id: "3",
+    title: "Third Item",
+  },
+];
 function QuizScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Image
-        source={require("../../assets/lidl-icon.png")}
-        style={styles.logo}
+        source={require("../../assets/quiz-banner.png")}
+        style={styles.banner}
       />
-      <View style={styles.button}>
-        <Text style={styles.buttonText}>Click me</Text>
-      </View>
+      <QuizList data={data} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.primary,
+    backgroundColor: "white",
     flex: 1, //full screen
     alignItems: "center", //y
     justifyContent: "space-evenly", //x
   },
-  logo: {
+  /*logo: {
     width: "150px",
     height: "150px",
     resizeMode: "contain",
@@ -37,7 +57,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     boxShadow: "0px -8px 20px rgba(50, 50, 50, 0.75) inset",
   },
-  buttonText: { color: colors.primary, fontWeight: "bold" },
+  buttonText: { color: colors.primary, fontWeight: "bold" },*/
+  banner: {
+    flex: 2,
+    marginTop: StatusBar.currentHeight || 0,
+  },
 });
 
 export default QuizScreen;

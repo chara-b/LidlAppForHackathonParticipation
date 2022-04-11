@@ -1,40 +1,32 @@
-import { FlatList, SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import { useState } from "react";
 import CListItem from "../../atoms/CListItem/CListItem";
 
-const CList = () => {
+const CList = ({ data }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
-    const color = item.id === selectedId ? "white" : "black";
+    const border =
+      item.id === selectedId ? "1.5px solid black" : "1.5px solid darkblue";
+    //const color = item.id === selectedId ? "white" : "black";
 
     return (
       <CListItem
         item={item}
         onPress={() => setSelectedId(item.id)}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
-        textSize={30}
+        border={{ border }}
       />
     );
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        extraData={selectedId}
-      />
-    </SafeAreaView>
+    <FlatList
+      data={data}
+      renderItem={renderItem}
+      keyExtractor={(item) => item.id}
+      extraData={selectedId}
+    />
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-});
+
 export default CList;

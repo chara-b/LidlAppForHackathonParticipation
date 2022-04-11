@@ -1,20 +1,27 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const CListItem = ({ item, onPress, backgroundColor, textColor, textSize }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor, textSize]}>{item.title}</Text>
+const CListItem = ({ item, onPress, border }) => (
+  <TouchableOpacity onPress={onPress} style={[styles.item]}>
+    <Text style={[border, styles.text]}>{item.title}</Text>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
+    padding: 5,
+    marginVertical: 2,
+    marginHorizontal: 2,
+    width: 250,
   },
-  title: {
-    fontSize: 32,
+  text: {
+    borderRadius: "8px",
+    height: "55px",
+    fontSize: "15px",
+    textAlign: "center",
+    textAlignVertical: "center",
+    color: "darkblue",
+    fontWeight: "bold",
   },
 });
 export default CListItem;
