@@ -11,21 +11,28 @@ import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizBuilder/quizBuilder";
 import CMenu from "../components/molecules/CMenu/CMenu";
 import { colors } from "../defaults/defaultStyles";
+import CButton from "../components/atoms/CButton/CButton";
 const data = [
   {
     id: "1",
-    title: "First Item",
+    title: "Χάρτινη για μπατονέτες",
   },
   {
     id: "2",
-    title: "Second Item",
+    title: "Πλαστική τυροκαυτερής",
   },
   {
     id: "3",
-    title: "Third Item",
+    title: "Χάρτινη για καλαμάκια",
+  },
+  {
+    id: "4",
+    title: "Χάρτινη για γεμιστά",
   },
 ];
 function QuizScreen(props) {
+  const buttonTitle = "Υποβολη";
+
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -33,6 +40,7 @@ function QuizScreen(props) {
         style={styles.banner}
       />
       <QuizList data={data} />
+      <CButton style={styles.button} title={buttonTitle} />
     </SafeAreaView>
   );
 }
@@ -44,23 +52,18 @@ const styles = StyleSheet.create({
     alignItems: "center", //y
     justifyContent: "space-evenly", //x
   },
-  /*logo: {
-    width: "150px",
-    height: "150px",
-    resizeMode: "contain",
+  banner: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
   },
   button: {
-    width: "50%",
-    height: "7%",
-    backgroundColor: colors.secondary,
-    alignItems: "center",
+    flex: 1,
+    color: "white",
+    backgroundColor: "red",
+    borderRadius: "8px",
+    fontWeight: "bold",
     justifyContent: "center",
-    boxShadow: "0px -8px 20px rgba(50, 50, 50, 0.75) inset",
-  },
-  buttonText: { color: colors.primary, fontWeight: "bold" },*/
-  banner: {
-    flex: 2,
-    marginTop: StatusBar.currentHeight || 0,
+    border: "2px",
   },
 });
 

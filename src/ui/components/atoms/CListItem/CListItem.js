@@ -16,10 +16,9 @@ const styles = StyleSheet.create({
   },
   text: {
     borderRadius: "8px",
-    height: "55px",
+    padding: 17,
     fontSize: "15px",
     textAlign: "center",
-    textAlignVertical: "center",
     color: "darkblue",
     fontWeight: "bold",
   },
