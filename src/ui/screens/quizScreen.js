@@ -6,6 +6,7 @@ import {
   View,
   Text,
   StatusBar,
+  Alert,
 } from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizBuilder/quizBuilder";
@@ -31,17 +32,32 @@ const data = [
   },
 ];
 function QuizScreen(props) {
-  const buttonTitle = "Υποβολη";
+  const buttonTitle = "ΥΠΟΒΟΛΗ";
+  const headerTitle = "Quiz";
+  const buttonDisabled = false;
+  const quizQuestion =
+    "Ποιές από τις παραπάνω συσκευασίες είναι 100% ανακυκλώσιμες;";
+  const quizSubQuestionTitle = "Επέλεξε όλες τις σωστές απαντήσεις";
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <CHeader title={headerTitle} />
       <Image
         source={require("../../assets/quiz-banner.png")}
         style={styles.banner}
       />
+      <Text style={styles.quizQuestion}>{quizQuestion}</Text>
+      <Text style={styles.quizSubQuestionTitle}>{quizSubQuestionTitle}</Text>
       <QuizList data={data} />
-      <CButton style={styles.button} title={buttonTitle} />
-    </SafeAreaView>
+      <CButton
+        styles={styles.button}
+        title={buttonTitle}
+        onClick={() => {
+          Alert.alert("Quiz answered");
+        }}
+        disabled={buttonDisabled}
+      />
+    </View>
   );
 }
 
@@ -54,16 +70,28 @@ const styles = StyleSheet.create({
   },
   banner: {
     flex: 1,
+    resizeMode: "contain",
+    backgroundColor: "red",
     marginTop: StatusBar.currentHeight || 0,
+  },
+  quizQuestion: {
+    flex: 0.7,
+    color: "black",
+    fontWeight: "bold",
+  },
+  quizSubQuestionTitle: {
+    flex: 0.3,
+    color: "blue",
+    fontWeight: "bold",
   },
   button: {
     flex: 1,
     color: "white",
-    backgroundColor: "red",
-    borderRadius: "8px",
+    padding: 20,
+    backgroundColor: "blue",
+    borderRadius: "40px",
     fontWeight: "bold",
     justifyContent: "center",
-    border: "2px",
   },
 });
 
