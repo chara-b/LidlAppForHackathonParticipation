@@ -3,10 +3,13 @@ import { StyleSheet, SafeAreaView, Image, View, Text } from "react-native";
 
 import { colors } from "../defaults/defaultStyles";
 
-function WelcomeScreen(props) {
+function QuizScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require("../assets/lidl-icon.png")} style={styles.logo} />
+      <Image
+        source={require("../../assets/lidl-icon.png")}
+        style={styles.logo}
+      />
       <View style={styles.button}>
         <Text style={styles.buttonText}>Click me</Text>
       </View>
@@ -37,4 +40,4 @@ const styles = StyleSheet.create({
   buttonText: { color: colors.primary, fontWeight: "bold" },
 });
 
-export default WelcomeScreen;
+export default QuizScreen;

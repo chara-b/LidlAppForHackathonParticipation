@@ -1,5 +1,5 @@
-import WelcomeScreen from "./app/screens/welcomeScreen";
+import QuizScreen from "./src/ui/screens/quizScreen";
 
 export default function App() {
-  return <WelcomeScreen />;
+  return <QuizScreen />;
 }
