@@ -1,12 +1,16 @@
-const Button = ({ children, textSize, bgColor, onClick }) => (
-  <BaseButton
-    textSize={textSize}
-    bgColor={bgColor}
-    onClick={onClick}
-    type="button"
-  >
-    {children}
-  </BaseButton>
-);
+import { Button } from "react-native";
 
-export default Button;
+const CButton = ({ title, onClick }) => (
+  <Button title={title} style={styles.button} onPress={onClick} />
+);
+const styles = StyleSheet.create({
+  button: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "white",
+    color: "black",
+    border: "2px solid #4CAF50",
+    borderRadius: "8px",
+  },
+});
+export default CButton;
