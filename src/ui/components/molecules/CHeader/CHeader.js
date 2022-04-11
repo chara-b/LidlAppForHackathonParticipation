@@ -14,7 +14,15 @@ const CHeader = ({ title }) => {
       }}
     >
       <Text style={[styles.title]}>{title}</Text>
-      <View style={[styles.rightSideElement]}>{}</View>
+      <View style={[styles.rightSideElement]}>
+        {setInterval((value = 60) => {
+          if (value > 0) {
+            return value--;
+          } else {
+            clearInterval(clock);
+          }
+        }, 1000)}
+      </View>
     </View>
   );
 };
