@@ -4,15 +4,4 @@ const Item = ({ children, textSize, contentAlign }) => (
   </BaseItem>
 );
 
-Item.propTypes = {
-  contentAlign: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  textSize: PropTypes.number,
-};
-
-Item.defaultProps = {
-  contentAlign: "center",
-  textSize: 16,
-};
-
 export default Item;

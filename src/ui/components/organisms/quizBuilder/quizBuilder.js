@@ -1,6 +1,6 @@
 import List from "../../molecules/CList";
 
-const ListSongs = ({ data, onClickSongHandle }) => (
+const QuizList = ({ data, onClickSongHandle }) => (
   <Card>
     <div>
       <img src="../../assets/artist.png" alt="falling in reverse" />
@@ -16,14 +16,4 @@ const ListSongs = ({ data, onClickSongHandle }) => (
   </Card>
 );
 
-ListSongs.propTypes = {
-  onClickSongHandle: PropTypes.func,
-  data: PropTypes.arrayOf(PropTypes.object),
-};
-
-ListSongs.defaultProps = {
-  onClickSongHandle: null,
-  data: [{}],
-};
-
-export default ListSongs;
+export default QuizList;
