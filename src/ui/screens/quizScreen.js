@@ -24,7 +24,7 @@ const data = [
 function QuizScreen(props) {
   const buttonTitle = "ΥΠΟΒΟΛΗ";
   const headerTitle = "Quiz";
-  const buttonDisabled = false;
+  const buttonDisabled = true;
   const quizQuestion =
     "Ποιές από τις παραπάνω συσκευασίες είναι 100% ανακυκλώσιμες;";
   const quizSubQuestionTitle = "Επέλεξε όλες τις σωστές απαντήσεις";

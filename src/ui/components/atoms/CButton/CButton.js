@@ -17,6 +17,8 @@ const CButton = ({
   disabled,
 }) => (
   <TouchableOpacity
+    style={disabled ? localStyles.disabled : localStyles.notDisabled}
+    disabled={disabled}
     onPress={() => {
       onClick;
     }}
@@ -28,4 +30,12 @@ const CButton = ({
   </TouchableOpacity>
 );
 
+const localStyles = StyleSheet.create({
+  disabled: {
+    opacity: 0.6,
+  },
+  notDisabled: {
+    opacity: 1,
+  },
+});
 export default CButton;
