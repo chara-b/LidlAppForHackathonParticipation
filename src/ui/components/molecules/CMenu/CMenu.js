@@ -9,46 +9,50 @@ const CMenu = ({}) => {
         title={"Αρχική"}
         color={"grey"}
         fontWeight={"normal"}
+        fontSize={10}
         iconName={"home"}
         iconSize={40}
         iconColor={"grey"}
-        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
         title={"Κουπόνια"}
         color={"grey"}
+        fontWeight={"normal"}
+        fontSize={10}
         iconName={"ticket"}
         iconSize={40}
         iconColor={"grey"}
-        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
         title={"Προσφορές"}
         color={"grey"}
+        fontWeight={"normal"}
+        fontSize={10}
         iconName={"burst-sale"}
         iconSize={40}
         iconColor={"grey"}
-        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
         title={"Αντίγραφα Αγορών"}
         color={"grey"}
+        fontWeight={"normal"}
+        fontSize={10}
         iconName={"page-copy"}
         iconSize={40}
         iconColor={"grey"}
-        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
         title={"Περισσότερα"}
         color={"grey"}
+        fontWeight={"normal"}
+        fontSize={10}
         iconName={"indent-more"}
         iconSize={40}
         iconColor={"grey"}
-        buttonTextOverflow={styles.buttonTextOverflow}
       />
     </View>
   );
@@ -60,7 +64,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: "100%",
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     backgroundColor: "white",
   },
   title: {
@@ -78,11 +82,6 @@ const styles = StyleSheet.create({
   button: {
     width: "100%",
     height: "100%",
-  },
-  buttonTextOverflow: {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
   },
 });
 export default CMenu;

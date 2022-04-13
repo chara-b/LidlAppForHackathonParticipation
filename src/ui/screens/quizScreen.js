@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet, Image, View, Text, StatusBar, Alert } from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizBuilder/quizBuilder";

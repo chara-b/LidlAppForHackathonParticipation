@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet, Image, View, Text, StatusBar, Alert } from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizBuilder/quizBuilder";
@@ -6,22 +5,27 @@ import CButton from "../components/atoms/CButton/CButton";
 const data = [
   {
     id: "1",
-    title: "Χάρτινη για μπατονέτες",
+    icon: "",
+    time: "09.00πμ - 11.00πμ",
+    city: "Παραλία Αλίμου, Αθήνα",
+    task: "Καθαρισμός Ακτής",
   },
   {
     id: "2",
-    title: "Πλαστική τυροκαυτερής",
+    icon: "",
+    time: "10.00πμ - 12.00μμ",
+    city: "Μέσω Google Meet",
+    task: "Πλαστικά στις Ακτές",
   },
   {
     id: "3",
-    title: "Χάρτινη για καλαμάκια",
-  },
-  {
-    id: "4",
-    title: "Χάρτινη για γεμιστά",
+    icon: "",
+    time: "1.00πμ - 13.00μμ",
+    city: "Μέσω Google Meet",
+    task: "Βιώσιμη Ανάπτυξη",
   },
 ];
-function myEventsScreen(props) {
+function ΜyEventsScreen(props) {
   const headerTitle = "Εκδηλώσεις";
   const buttonLeftTitle = "Προσεχώς";
   const buttonRightTitle = "Οι εκδηλώσεις μου";
@@ -36,19 +40,17 @@ function myEventsScreen(props) {
     <>
       <CHeader title={headerTitle} />
       <CButton
-        styles={styles.quizButton}
-        title={buttonTitle}
+        title={buttonLeftTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={Alert.alert("Quiz answered")}
+        onClick={Alert.alert("Προσεχώς")}
         disabled={buttonDisabled}
       />
       <CButton
-        styles={styles.quizButton}
-        title={buttonTitle}
+        title={buttonRightTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={Alert.alert("Quiz answered")}
+        onClick={Alert.alert("Οι εκδηλώσεις μου")}
         disabled={buttonDisabled}
       />
       <Text style={styles.subTitle}>{subTitle}</Text>
@@ -79,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default myEventsScreen;
+export default ΜyEventsScreen;

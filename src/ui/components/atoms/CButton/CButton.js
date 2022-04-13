@@ -5,11 +5,11 @@ import { Feather } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 const CButton = ({
-  styles,
+  styles, //width, height
   title,
   color,
   fontWeight,
-  buttonTextOverflow,
+  fontSize,
   iconName,
   iconSize,
   iconColor,
@@ -24,8 +24,13 @@ const CButton = ({
     }}
   >
     <View style={styles}>
-      <Foundation name={iconName} size={iconSize} color={iconColor} />
-      <Text style={{ color, fontWeight, buttonTextOverflow }}>{title}</Text>
+      <Foundation
+        name={iconName}
+        size={iconSize}
+        color={iconColor}
+        style={localStyles.icon}
+      />
+      <Text style={{ fontSize, color, fontWeight }}>{title}</Text>
     </View>
   </TouchableOpacity>
 );
@@ -36,6 +41,10 @@ const localStyles = StyleSheet.create({
   },
   notDisabled: {
     opacity: 1,
+  },
+  icon: {
+    textAlign: "center",
+    width: "auto",
   },
 });
 export default CButton;
