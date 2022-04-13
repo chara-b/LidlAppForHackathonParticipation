@@ -44,9 +44,7 @@ function QuizScreen(props) {
         title={buttonTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={() => {
-          Alert.alert("Quiz answered");
-        }}
+        onClick={Alert.alert("Quiz answered")}
         disabled={buttonDisabled}
       />
     </>
@@ -62,8 +60,8 @@ const styles = StyleSheet.create({
   // },
   quizBanner: {
     flex: 1,
-    resizeMode: "contain",
-    backgroundColor: "red",
+    width: "90%",
+    height: "100px",
     marginTop: StatusBar.currentHeight || 0,
   },
   quizQuestion: {

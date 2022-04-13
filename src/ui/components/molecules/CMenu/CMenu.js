@@ -7,42 +7,48 @@ const CMenu = ({}) => {
       <CButton
         styles={styles.button}
         title={"Αρχική"}
-        color={"black"}
+        color={"grey"}
+        fontWeight={"normal"}
         iconName={"home"}
-        iconSize={50}
-        iconColor={"black"}
+        iconSize={40}
+        iconColor={"grey"}
+        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
-        title={"Αρχική"}
-        color={"black"}
-        iconName={"home"}
-        iconSize={50}
-        iconColor={"black"}
+        title={"Κουπόνια"}
+        color={"grey"}
+        iconName={"ticket"}
+        iconSize={40}
+        iconColor={"grey"}
+        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
-        title={"Αρχική"}
-        color={"black"}
-        iconName={"home"}
-        iconSize={50}
-        iconColor={"black"}
+        title={"Προσφορές"}
+        color={"grey"}
+        iconName={"burst-sale"}
+        iconSize={40}
+        iconColor={"grey"}
+        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
-        title={"Αρχική"}
-        color={"black"}
-        iconName={"home"}
-        iconSize={50}
-        iconColor={"black"}
+        title={"Αντίγραφα Αγορών"}
+        color={"grey"}
+        iconName={"page-copy"}
+        iconSize={40}
+        iconColor={"grey"}
+        buttonTextOverflow={styles.buttonTextOverflow}
       />
       <CButton
         styles={styles.button}
-        title={"Αρχική"}
-        color={"black"}
-        iconName={"home"}
-        iconSize={50}
-        iconColor={"black"}
+        title={"Περισσότερα"}
+        color={"grey"}
+        iconName={"indent-more"}
+        iconSize={40}
+        iconColor={"grey"}
+        buttonTextOverflow={styles.buttonTextOverflow}
       />
     </View>
   );
@@ -51,11 +57,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     height: 70,
-    padding: 20,
+    padding: 10,
     width: "100%",
     alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "purple",
+    justifyContent: "space-evenly",
+    backgroundColor: "white",
   },
   title: {
     fontSize: "23px",
@@ -72,6 +78,11 @@ const styles = StyleSheet.create({
   button: {
     width: "100%",
     height: "100%",
+  },
+  buttonTextOverflow: {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
 });
 export default CMenu;

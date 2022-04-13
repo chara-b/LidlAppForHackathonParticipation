@@ -32,12 +32,11 @@ const CHeader = ({ title }) => {
     <View
       style={{
         flexDirection: "row",
-        height: 100,
+        height: 70,
         padding: 20,
         width: "100%",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "green",
       }}
     >
       <Text style={[styles.title]}>{title}</Text>
