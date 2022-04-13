@@ -9,14 +9,14 @@ const CListItem = ({ item, onPress, border }) => (
 
 const styles = StyleSheet.create({
   item: {
-    padding: 5,
+    padding: 3,
     marginVertical: 2,
     marginHorizontal: 2,
     width: 250,
   },
   text: {
     borderRadius: "8px",
-    padding: 17,
+    padding: 14,
     fontSize: "15px",
     textAlign: "center",
     color: "darkblue",

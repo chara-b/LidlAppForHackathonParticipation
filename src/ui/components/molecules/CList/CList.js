@@ -7,7 +7,7 @@ const CList = ({ data }) => {
 
   const renderItem = ({ item }) => {
     const border =
-      item.id === selectedId ? "1.5px solid black" : "1.5px solid darkblue";
+      item.id === selectedId ? "2px solid black" : "1.5px solid darkblue";
 
     return (
       <CListItem

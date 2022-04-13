@@ -52,12 +52,6 @@ function QuizScreen(props) {
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   backgroundColor: "white",
-  //   flex: 1, //full screen
-  //   alignItems: "center", //y
-  //   justifyContent: "space-evenly", //x
-  // },
   quizBanner: {
     flex: 1,
     width: "90%",
@@ -66,24 +60,26 @@ const styles = StyleSheet.create({
   },
   quizQuestion: {
     flex: 0.7,
+    padding: 10,
     color: "black",
     fontWeight: "bold",
+    textAlign: "center",
   },
   quizSubQuestionTitle: {
     flex: 0.3,
+    padding: 10,
     color: "blue",
     fontWeight: "bold",
   },
   quizButton: {
     flex: 1,
-    color: "white",
     padding: 20,
     width: "180px",
     backgroundColor: "rgb(26,115,232)",
     borderRadius: "40px",
-    fontWeight: "bold",
     textAlign: "center",
     justifyContent: "center",
+    marginBottom: "10px",
   },
 });
 
