@@ -4,9 +4,9 @@
     "slug": "lidlApp",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./app/assets/lidl-icon.png",
+    "icon": "./src/assets/lidl-icon.png",
     "splash": {
-      "image": "./app/assets/lidl.jpg",
+      "image": "./src/assets/lidl.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/lidl.jpg",
+        "foregroundImage": "./src/assets/lidl.jpg",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./app/assets/lidl-icon.png"
+      "favicon": "./src/assets/lidl-icon.png"
     }
   }
 }

@@ -1,6 +1,6 @@
 import QuizScreen from "./src/ui/screens/quizScreen";
 import CMenu from "./src/ui/components/molecules/CMenu/CMenu";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function App() {
   return (

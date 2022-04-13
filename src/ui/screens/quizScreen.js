@@ -1,17 +1,7 @@
 import React from "react";
-import {
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  View,
-  Text,
-  StatusBar,
-  Alert,
-} from "react-native";
+import { StyleSheet, Image, View, Text, StatusBar, Alert } from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizBuilder/quizBuilder";
-import CMenu from "../components/molecules/CMenu/CMenu";
-import { colors } from "../defaults/defaultStyles";
 import CButton from "../components/atoms/CButton/CButton";
 const data = [
   {
@@ -40,35 +30,37 @@ function QuizScreen(props) {
   const quizSubQuestionTitle = "Επέλεξε όλες τις σωστές απαντήσεις";
 
   return (
-    <View style={styles.container}>
+    <>
       <CHeader title={headerTitle} />
       <Image
         source={require("../../assets/quiz-banner.png")}
-        style={styles.banner}
+        style={styles.quizBanner}
       />
       <Text style={styles.quizQuestion}>{quizQuestion}</Text>
       <Text style={styles.quizSubQuestionTitle}>{quizSubQuestionTitle}</Text>
       <QuizList data={data} />
       <CButton
-        styles={styles.button}
+        styles={styles.quizButton}
         title={buttonTitle}
+        color={"white"}
+        fontWeight={"bold"}
         onClick={() => {
           Alert.alert("Quiz answered");
         }}
         disabled={buttonDisabled}
       />
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    flex: 1, //full screen
-    alignItems: "center", //y
-    justifyContent: "space-evenly", //x
-  },
-  banner: {
+  // container: {
+  //   backgroundColor: "white",
+  //   flex: 1, //full screen
+  //   alignItems: "center", //y
+  //   justifyContent: "space-evenly", //x
+  // },
+  quizBanner: {
     flex: 1,
     resizeMode: "contain",
     backgroundColor: "red",
@@ -84,13 +76,15 @@ const styles = StyleSheet.create({
     color: "blue",
     fontWeight: "bold",
   },
-  button: {
+  quizButton: {
     flex: 1,
     color: "white",
     padding: 20,
-    backgroundColor: "blue",
+    width: "180px",
+    backgroundColor: "rgb(26,115,232)",
     borderRadius: "40px",
     fontWeight: "bold",
+    textAlign: "center",
     justifyContent: "center",
   },
 });
