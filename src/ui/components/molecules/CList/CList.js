@@ -1,8 +1,8 @@
 import { FlatList } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CListItem from "../../atoms/CListItem/CListItem";
 
-const CList = ({ data }) => {
+const CList = ({ data, handleSelectedItemId }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
@@ -17,6 +17,10 @@ const CList = ({ data }) => {
       />
     );
   };
+  useEffect(() => {
+    // each time an item from the list is selected, this event is fired to get the changes from this component and send them to parent that we need the logic of enabling the button of the quiz if an answer is selected...
+    handleSelectedItemId(selectedId); // this function is a prop coming from the parent !
+  }, [selectedId]);
 
   return (
     <FlatList

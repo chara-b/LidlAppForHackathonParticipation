@@ -1,6 +1,6 @@
 import { StyleSheet, Image, View, Text, StatusBar, Alert } from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
-import QuizList from "../components/organisms/quizBuilder/quizBuilder";
+import QuizList from "../components/organisms/quizList";
 import CButton from "../components/atoms/CButton/CButton";
 const data = [
   {
