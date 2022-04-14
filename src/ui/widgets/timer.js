@@ -19,8 +19,9 @@ const Timer = () => {
         setMinutes((minutes) => minutes - 1);
         setSeconds(59);
       } else if (seconds === 0 && minutes === 0) {
-        Alert.alert("Time's off! You lost the quiz!");
-        clearInterval();
+        Alert.alert("Time's off! You lost the quiz! ⏲️");
+        console.log("Time's off! You lost the quiz! ⏲️");
+        clearInterval(clock);
       }
     }, 1000);
 
