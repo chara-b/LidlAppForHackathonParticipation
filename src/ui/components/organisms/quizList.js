@@ -3,7 +3,7 @@ import CButton from "../../components/atoms/CButton/CButton";
 import { Alert, StyleSheet } from "react-native";
 import { useState } from "react";
 
-const QuizList = ({ data }) => {
+const QuizList = ({ data, isTimeOff }) => {
   const buttonTitle = "ΥΠΟΒΟΛΗ";
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [correctAnswerItem, setCorrectAnswerItem] = useState(null);
@@ -11,15 +11,12 @@ const QuizList = ({ data }) => {
   const handleSelectedItem = (item) => {
     //if id !== 0 means the user selected something, so enable the button
     if (item.id !== 0) {
-      console.log(`Διάλεξες την ${item.id}η απάντηση`);
+      //console.log(`Διάλεξες την ${item.id}η απάντηση`);
       setButtonDisabled(false);
-    }
-
-    if (item.correctAnswer) {
       setCorrectAnswerItem(item);
     }
   };
-  const onClick = () => {
+  const onSubmit = () => {
     if (correctAnswerItem.correctAnswer) {
       Alert.alert(
         `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
@@ -36,15 +33,22 @@ const QuizList = ({ data }) => {
       );
     }
   };
+  const onTimeOff = () => {
+    Alert.alert("Time's off! You can't give an answer now! ⏲️");
+    console.log("Time's off! You can't give an answer now! ⏲️");
+  };
   return (
     <>
-      <CList data={data} handleSelectedItem={handleSelectedItem} />
+      <CList
+        data={data}
+        handleSelectedItem={!isTimeOff ? handleSelectedItem : onTimeOff}
+      />
       <CButton
         styles={styles.quizButton}
         title={buttonTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={onClick}
+        onClick={!isTimeOff ? onSubmit : onTimeOff}
         disabled={buttonDisabled}
       />
     </>

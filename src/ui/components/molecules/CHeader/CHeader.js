@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Timer from "../../../widgets/timer";
 
-const CHeader = (props) => {
+const CHeader = ({ title, timeOff }) => {
+  const [timeoff, setTimeOff] = useState(false);
+  timeOff = timeoff;
   return (
     <View
       style={{
@@ -14,8 +16,8 @@ const CHeader = (props) => {
         justifyContent: "space-between",
       }}
     >
-      <Text style={[styles.title]}>{props.title}</Text>
-      <Timer></Timer>
+      <Text style={[styles.title]}>{title}</Text>
+      <Timer handleTimeoff={(timeoff) => setTimeOff(timeoff)}></Timer>
     </View>
   );
 };

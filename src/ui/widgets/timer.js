@@ -7,7 +7,7 @@ function isDigit(value) {
   return String(+value).length == 1;
 }
 
-const Timer = () => {
+const Timer = ({ handleTimeoff }) => {
   const [seconds, setSeconds] = useState(59);
   const [minutes, setMinutes] = useState(2);
 
@@ -21,6 +21,7 @@ const Timer = () => {
       } else if (seconds === 0 && minutes === 0) {
         Alert.alert("Time's off! You lost the quiz! ⏲️");
         console.log("Time's off! You lost the quiz! ⏲️");
+        handleTimeoff = true;
         clearInterval(clock);
       }
     }, 1000);
