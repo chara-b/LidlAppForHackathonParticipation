@@ -8,7 +8,7 @@ import RefuserLevelSuccessScreen from "./src/ui/screens/refuserLevelSuccessScree
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <QuizScreen />
+      <ΜyEventsScreen />
       <CMenu />
     </SafeAreaView>
   );

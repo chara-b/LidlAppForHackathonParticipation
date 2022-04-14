@@ -38,7 +38,7 @@ function ΜyEventsScreen(props) {
 
   return (
     <>
-      <CHeader title={headerTitle} />
+      <CHeader title={headerTitle} timeOff={null} />
       <CButton
         title={buttonLeftTitle}
         color={"white"}

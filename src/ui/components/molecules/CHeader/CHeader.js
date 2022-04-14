@@ -15,7 +15,13 @@ const CHeader = ({ title, timeOff }) => {
       }}
     >
       <Text style={[styles.title]}>{title}</Text>
-      <Timer handleTimeoff={(timeoff) => timeOff(timeoff)}></Timer>
+      <>
+        {timeOff !== null ? (
+          <Timer handleTimeoff={(timeoff) => timeOff(timeoff)}></Timer>
+        ) : (
+          <></>
+        )}
+      </>
     </View>
   );
 };
