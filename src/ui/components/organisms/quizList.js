@@ -1,12 +1,17 @@
 import CList from "../molecules/CList/CList";
 import CButton from "../../components/atoms/CButton/CButton";
 import { Alert, StyleSheet } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const QuizList = ({ data, isTimeOff }) => {
   const buttonTitle = "ΥΠΟΒΟΛΗ";
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [correctAnswerItem, setCorrectAnswerItem] = useState(null);
+  //const [istimeoff, setIsTimeOff] = useState();
+
+  //   useEffect(() => {
+  //     setIsTimeOff(isTimeOff);
+  //   }, [isTimeOff]);
 
   const handleSelectedItem = (item) => {
     //if id !== 0 means the user selected something, so enable the button
@@ -17,20 +22,24 @@ const QuizList = ({ data, isTimeOff }) => {
     }
   };
   const onSubmit = () => {
-    if (correctAnswerItem.correctAnswer) {
-      Alert.alert(
-        `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
-      );
-      console.log(
-        `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
-      );
+    if (isTimeOff) {
+      onTimeOff();
     } else {
-      Alert.alert(
-        `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
-      );
-      console.log(
-        `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
-      );
+      if (correctAnswerItem.correctAnswer) {
+        Alert.alert(
+          `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
+        );
+        console.log(
+          `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
+        );
+      } else {
+        Alert.alert(
+          `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
+        );
+        console.log(
+          `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
+        );
+      }
     }
   };
   const onTimeOff = () => {
@@ -39,16 +48,13 @@ const QuizList = ({ data, isTimeOff }) => {
   };
   return (
     <>
-      <CList
-        data={data}
-        handleSelectedItem={!isTimeOff ? handleSelectedItem : onTimeOff}
-      />
+      <CList data={data} handleSelectedItem={handleSelectedItem} />
       <CButton
         styles={styles.quizButton}
         title={buttonTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={!isTimeOff ? onSubmit : onTimeOff}
+        onClick={onSubmit}
         disabled={buttonDisabled}
       />
     </>

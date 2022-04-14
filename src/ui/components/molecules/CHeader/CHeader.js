@@ -3,8 +3,6 @@ import { View, Text, StyleSheet } from "react-native";
 import Timer from "../../../widgets/timer";
 
 const CHeader = ({ title, timeOff }) => {
-  const [timeoff, setTimeOff] = useState(false);
-  timeOff = timeoff;
   return (
     <View
       style={{
@@ -17,7 +15,7 @@ const CHeader = ({ title, timeOff }) => {
       }}
     >
       <Text style={[styles.title]}>{title}</Text>
-      <Timer handleTimeoff={(timeoff) => setTimeOff(timeoff)}></Timer>
+      <Timer handleTimeoff={(timeoff) => timeOff(timeoff)}></Timer>
     </View>
   );
 };

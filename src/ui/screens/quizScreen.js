@@ -31,7 +31,7 @@ function QuizScreen(props) {
   const quizQuestion =
     "Ποιές από τις παραπάνω συσκευασίες είναι 100% ανακυκλώσιμες;";
   const quizSubQuestionTitle = "Επέλεξε όλες τις σωστές απαντήσεις";
-  const [isTimeOff, setIsTimeOff] = useState(false); //becomes true after time is off, so now we can change the text printed in the console if button is pressed although the time has run out! we first pass this variable here inside quizlist as a prop
+  const [isTimeOff, setIsTimeOff] = useState(); //becomes true after time is off, so now we can change the text printed in the console if button is pressed although the time has run out! we first pass this variable here inside quizlist as a prop
   return (
     <>
       <CHeader

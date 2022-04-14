@@ -21,7 +21,7 @@ const Timer = ({ handleTimeoff }) => {
       } else if (seconds === 0 && minutes === 0) {
         Alert.alert("Time's off! You lost the quiz! ⏲️");
         console.log("Time's off! You lost the quiz! ⏲️");
-        handleTimeoff = true;
+        handleTimeoff(true);
         clearInterval(clock);
       }
     }, 1000);
