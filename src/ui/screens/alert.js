@@ -1,6 +1,6 @@
 import { View, StyleSheet, Button, Alert } from "react-native";
 
-const AlertScreen = (title, msg) => {
+const AlertScreen = ({ title, msg }) => {
   const createAlertPopUp = () =>
     Alert.alert(title, msg, [
       {
