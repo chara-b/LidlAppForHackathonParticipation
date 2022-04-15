@@ -27,9 +27,15 @@ const CEventsList = ({
           style={styles.eventCalendarIcon}
         />
         <View style={styles.content}>
-          <Text>{item.time}</Text>
-          <Text>{item.city}</Text>
-          <Text>{item.task}</Text>
+          <Text style={{ color: "rgb(105,105,105)", fontWeight }}>
+            {item.time}
+          </Text>
+          <Text style={{ color: "rgb(0,191,255)", fontWeight }}>
+            {item.city}
+          </Text>
+          <Text style={{ color: "rgb(25,25,112)", fontWeight }}>
+            {item.task}
+          </Text>
           <CButton
             styles={styles.button}
             title={buttonTitle}

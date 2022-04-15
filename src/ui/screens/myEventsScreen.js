@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     flex: 1,
-    color: "blue",
+    color: "rgb(25,25,112)",
     fontWeight: "bold",
     marginBottom: "10px",
     marginLeft: "25px",
   },
   notificationTitle: {
     flex: 1,
-    color: "black",
+    color: "rgb(105,105,105)",
     fontWeight: "bold",
     padding: "20px",
   },
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: "10px",
     border: "2px solid black",
+    boxShadow: "1px 6px rgb(105,105,105)",
   },
   rightButtonSelected: {
     flex: 1,
@@ -135,6 +136,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: "10px",
     border: "2px solid black",
+    boxShadow: "1px 6px rgb(105,105,105)",
   },
 });
 
