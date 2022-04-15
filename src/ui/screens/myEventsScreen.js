@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 9,
     alignItems: "flex-start",
-    padding: "40px",
   },
   buttonsContainer: {
     flex: 1,
@@ -97,20 +96,19 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   subTitle: {
-    flex: 7,
-    padding: 10,
+    flex: 1,
     color: "blue",
     fontWeight: "bold",
+    marginBottom: "10px",
   },
   notificationTitle: {
     flex: 1,
-    padding: 10,
     color: "black",
     fontWeight: "bold",
   },
   topButtons: {
     flex: 1,
-    padding: 19,
+
     width: "170px",
     height: "150px",
     backgroundColor: "white",

@@ -18,14 +18,11 @@ const EventsList = ({ data }) => {
 
   useEffect(() => {}, []);
 
-  const handleSelectedItem = (item) => {
-    //if id !== 0 means the user selected something, so enable the button
-    if (item.id !== 0) {
-    }
-  };
+  const onCheckIn = () => {};
 
   return (
     <CEventsList
+      style={styles.container}
       data={data}
       buttonTitle={buttonTitle}
       buttonDisabled={buttonDisabled}
@@ -34,8 +31,13 @@ const EventsList = ({ data }) => {
       iconName={iconName}
       iconSize={iconSize}
       iconColor={iconColor}
+      onClick={onCheckIn}
     ></CEventsList>
   );
 };
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+  },
+});
 export default EventsList;

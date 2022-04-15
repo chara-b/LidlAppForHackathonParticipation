@@ -13,7 +13,7 @@ const CEventsList = ({
   iconName,
   iconSize,
   iconColor,
-  onCheckIn,
+  onClick,
 }) => {
   //   const [selectedItem, setSelectedItem] = useState({
   //     id: 0,
@@ -22,7 +22,10 @@ const CEventsList = ({
   const renderItem = ({ item }) => {
     return (
       <View style={styles.container}>
-        <Image source={require("../../../../assets/1-calendar-icon.png")} />
+        <Image
+          source={require("../../../../assets/1-calendar-icon.png")}
+          style={styles.eventCalendarIcon}
+        />
         <View style={styles.content}>
           <Text>{item.time}</Text>
           <Text>{item.city}</Text>
@@ -32,7 +35,7 @@ const CEventsList = ({
             title={buttonTitle}
             color={color}
             fontWeight={fontWeight}
-            onClick={onCheckIn}
+            onClick={onClick}
             disabled={buttonDisabled}
           />
         </View>
@@ -69,22 +72,34 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
+    justifyContent: "space-evenly",
+    backgroundColor: "blue",
   },
   content: {
     flex: 1,
+    width: "300px",
+    backgroundColor: "red",
   },
   rightVerticalButtons: {
     flex: 1,
+    alignItems: "flex-end",
+    backgroundColor: "green",
   },
   button: {
     flex: 1,
-    padding: 20,
-    width: "180px",
+    padding: 10,
+    width: "100px",
     backgroundColor: "rgb(26,115,232)",
     borderRadius: "40px",
     textAlign: "center",
     justifyContent: "center",
     marginBottom: "10px",
+  },
+  eventCalendarIcon: {
+    flex: 1,
+    width: "45%",
+    height: "45%",
+    resizeMode: "contain",
   },
 });
 export default CEventsList;
