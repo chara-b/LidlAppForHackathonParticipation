@@ -1,4 +1,11 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { useEffect, useState } from "react";
 import { Foundation } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
@@ -7,7 +14,6 @@ import CButton from "../../atoms/CButton/CButton";
 const CEventsList = ({
   data,
   buttonTitle,
-  buttonDisabled,
   color,
   fontWeight,
   iconName,
@@ -18,14 +24,38 @@ const CEventsList = ({
   //   const [selectedItem, setSelectedItem] = useState({
   //     id: 0,
   //   });
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  //var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  //var yyyy = today.getFullYear();
+
+  //today = mm + "/" + dd + "/" + yyyy;
 
   const renderItem = ({ item }) => {
     return (
       <View style={styles.container}>
-        <Image
+        <ImageBackground
           source={require("../../../../assets/1-calendar-icon.png")}
           style={styles.eventCalendarIcon}
-        />
+        >
+          <View
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text>{item.date}</Text>
+          </View>
+        </ImageBackground>
+        {/* <Image
+          source={require("../../../../assets/1-calendar-icon.png")}
+          style={styles.eventCalendarIcon}
+        /> */}
         <View style={styles.content}>
           <Text style={{ color: "rgb(105,105,105)", fontWeight }}>
             {item.time}
@@ -42,7 +72,7 @@ const CEventsList = ({
             color={color}
             fontWeight={fontWeight}
             onClick={onClick}
-            disabled={buttonDisabled}
+            disabled={+dd === +item.date.split("/")[0] ? false : true}
           />
         </View>
         <View style={styles.rightVerticalButtons}>

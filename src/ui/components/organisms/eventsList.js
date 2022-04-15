@@ -14,9 +14,6 @@ const EventsList = ({ data }) => {
   };
   const iconSize = { topButton: "20px", bottomButton: "20px" };
   const iconColor = { topButton: "grey", bottomButton: "grey" };
-  const [buttonDisabled, setButtonDisabled] = useState(false);
-
-  useEffect(() => {}, []);
 
   const onCheckIn = () => {};
 
@@ -24,7 +21,6 @@ const EventsList = ({ data }) => {
     <CEventsList
       data={data}
       buttonTitle={buttonTitle}
-      buttonDisabled={buttonDisabled}
       color={color}
       fontWeight={fontWeight}
       iconName={iconName}

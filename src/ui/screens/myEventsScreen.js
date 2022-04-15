@@ -8,24 +8,27 @@ import EventsList from "../components/organisms/eventsList";
 const data = [
   {
     id: "1",
-    icon: "../../../../assets/25-calendar-icon.png",
+    icon: "../assets/25-calendar-icon.png",
     time: "09.00πμ - 11.00πμ",
     city: "Παραλία Αλίμου, Αθήνα",
     task: "Καθαρισμός Ακτής",
+    date: "16/4",
   },
   {
     id: "2",
-    icon: "../../../../assets/30-calendar-icon.png",
+    icon: "../assets/30-calendar-icon.png",
     time: "10.00πμ - 12.00μμ",
     city: "Μέσω Google Meet",
     task: "Πλαστικά στις Ακτές",
+    date: "18/4",
   },
   {
     id: "3",
-    icon: "../../../../assets/1-calendar-icon.png",
+    icon: "../assets/1-calendar-icon.png",
     time: "1.00πμ - 13.00μμ",
     city: "Μέσω Google Meet",
     task: "Βιώσιμη Ανάπτυξη",
+    date: "19/4",
   },
 ];
 function ΜyEventsScreen(props) {
