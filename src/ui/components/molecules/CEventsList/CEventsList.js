@@ -73,17 +73,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    backgroundColor: "blue",
     padding: "10px",
     width: "100%",
   },
   content: {
     flex: 10,
-    backgroundColor: "red",
   },
   rightVerticalButtons: {
     flex: 1,
-    backgroundColor: "green",
   },
   button: {
     flex: 1,

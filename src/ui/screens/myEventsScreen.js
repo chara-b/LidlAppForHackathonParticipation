@@ -85,9 +85,8 @@ function ΜyEventsScreen(props) {
 
 const styles = StyleSheet.create({
   buttonsContainer: {
-    flex: 1,
     width: "100%",
-    height: "100%",
+    height: "8%",
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
@@ -96,15 +95,16 @@ const styles = StyleSheet.create({
     color: "blue",
     fontWeight: "bold",
     marginBottom: "10px",
+    marginLeft: "25px",
   },
   notificationTitle: {
     flex: 1,
     color: "black",
     fontWeight: "bold",
+    padding: "20px",
   },
   topButtons: {
     flex: 1,
-
     width: "170px",
     height: "150px",
     backgroundColor: "white",
@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
   },
   leftButtonSelected: {
     flex: 1,
-    padding: 19,
     width: "170px",
     height: "150px",
     backgroundColor: "rgb(26,115,232)",
@@ -128,7 +127,6 @@ const styles = StyleSheet.create({
   },
   rightButtonSelected: {
     flex: 1,
-    padding: 19,
     width: "170px",
     height: "150px",
     backgroundColor: "rgb(26,115,232)",
