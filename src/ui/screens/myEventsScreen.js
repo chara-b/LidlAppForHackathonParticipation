@@ -34,9 +34,15 @@ function ΜyEventsScreen(props) {
   const subTitle = "Εκδηλώσεις που θα πάω";
   const notificationTitle =
     "Παρακαλούμε προβείτε σε check-in την ημέρα και ώρα έναρξης της κάθε εκδήλωσης";
-
-  const onClickLeftButton = () => {};
-  const onClickRightButton = () => {};
+  const [buttonState, setButtonState] = useState({
+    btnSelected: "left",
+  });
+  const onClickLeftButton = () => {
+    setButtonState({ btnSelected: "left" });
+  };
+  const onClickRightButton = () => {
+    setButtonState({ btnSelected: "right" });
+  };
   return (
     <>
       <CHeader title={headerTitle} timeOff={null} />
@@ -44,7 +50,7 @@ function ΜyEventsScreen(props) {
         <CButton
           styles={styles.topButtons}
           title={buttonLeftTitle}
-          color={"white"}
+          color={"black"}
           fontWeight={"bold"}
           onClick={onClickLeftButton}
           disabled={false}
@@ -52,20 +58,27 @@ function ΜyEventsScreen(props) {
         <CButton
           styles={styles.topButtons}
           title={buttonRightTitle}
-          color={"white"}
+          color={"black"}
           fontWeight={"bold"}
           onClick={onClickRightButton}
           disabled={false}
         />
       </View>
-      <Text style={styles.subTitle}>{subTitle}</Text>
+      <View style={styles.container}>
+        <Text style={styles.subTitle}>{subTitle}</Text>
 
-      <Text style={styles.notificationTitle}>{notificationTitle}</Text>
+        <Text style={styles.notificationTitle}>{notificationTitle}</Text>
+      </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 9,
+    alignItems: "flex-start",
+    padding: "15px",
+  },
   buttonsContainer: {
     flex: 1,
     width: "100%",
@@ -88,9 +101,33 @@ const styles = StyleSheet.create({
   topButtons: {
     flex: 1,
     padding: 10,
-    width: "140px",
+    width: "150px",
     height: "140px",
     backgroundColor: "white",
+    borderRadius: "10px",
+    textAlign: "center",
+    justifyContent: "center",
+    marginBottom: "10px",
+    border: "2px solid black",
+  },
+  leftButtonSelected: {
+    flex: 1,
+    padding: 10,
+    width: "150px",
+    height: "140px",
+    backgroundColor: "blue",
+    borderRadius: "10px",
+    textAlign: "center",
+    justifyContent: "center",
+    marginBottom: "10px",
+    border: "2px solid black",
+  },
+  rightButtonSelected: {
+    flex: 1,
+    padding: 10,
+    width: "150px",
+    height: "140px",
+    backgroundColor: "blue",
     borderRadius: "10px",
     textAlign: "center",
     justifyContent: "center",
