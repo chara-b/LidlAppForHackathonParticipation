@@ -48,17 +48,25 @@ function ΜyEventsScreen(props) {
       <CHeader title={headerTitle} timeOff={null} />
       <View style={styles.buttonsContainer}>
         <CButton
-          styles={styles.topButtons}
+          styles={
+            buttonState.btnSelected === "left"
+              ? styles.leftButtonSelected
+              : styles.topButtons
+          }
           title={buttonLeftTitle}
-          color={"black"}
+          color={buttonState.btnSelected === "left" ? "white" : "black"}
           fontWeight={"bold"}
           onClick={onClickLeftButton}
           disabled={false}
         />
         <CButton
-          styles={styles.topButtons}
+          styles={
+            buttonState.btnSelected === "right"
+              ? styles.rightButtonSelected
+              : styles.topButtons
+          }
           title={buttonRightTitle}
-          color={"black"}
+          color={buttonState.btnSelected === "right" ? "white" : "black"}
           fontWeight={"bold"}
           onClick={onClickRightButton}
           disabled={false}
@@ -100,9 +108,9 @@ const styles = StyleSheet.create({
   },
   topButtons: {
     flex: 1,
-    padding: 10,
-    width: "150px",
-    height: "140px",
+    padding: 19,
+    width: "170px",
+    height: "150px",
     backgroundColor: "white",
     borderRadius: "10px",
     textAlign: "center",
@@ -112,10 +120,10 @@ const styles = StyleSheet.create({
   },
   leftButtonSelected: {
     flex: 1,
-    padding: 10,
-    width: "150px",
-    height: "140px",
-    backgroundColor: "blue",
+    padding: 19,
+    width: "170px",
+    height: "150px",
+    backgroundColor: "rgb(26,115,232)",
     borderRadius: "10px",
     textAlign: "center",
     justifyContent: "center",
@@ -124,10 +132,10 @@ const styles = StyleSheet.create({
   },
   rightButtonSelected: {
     flex: 1,
-    padding: 10,
-    width: "150px",
-    height: "140px",
-    backgroundColor: "blue",
+    padding: 19,
+    width: "170px",
+    height: "150px",
+    backgroundColor: "rgb(26,115,232)",
     borderRadius: "10px",
     textAlign: "center",
     justifyContent: "center",
