@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 9,
     alignItems: "flex-start",
-    padding: "15px",
+    padding: "40px",
   },
   buttonsContainer: {
     flex: 1,

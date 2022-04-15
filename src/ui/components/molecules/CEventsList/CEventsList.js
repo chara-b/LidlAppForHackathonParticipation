@@ -13,11 +13,12 @@ const CEventsList = ({
   iconName,
   iconSize,
   iconColor,
+  onCheckIn,
 }) => {
   //   const [selectedItem, setSelectedItem] = useState({
   //     id: 0,
   //   });
-  const onCheckIn = () => {};
+
   const renderItem = ({ item }) => {
     return (
       <View style={styles.container}>

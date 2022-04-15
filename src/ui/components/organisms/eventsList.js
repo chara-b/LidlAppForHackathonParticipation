@@ -12,7 +12,7 @@ const EventsList = ({ data }) => {
     topButton: "ios-close-circle-outline",
     bottomButton: "ios-share-social-outline",
   };
-  const iconSize = { topButton: "10px", bottomButton: "10px" };
+  const iconSize = { topButton: "20px", bottomButton: "20px" };
   const iconColor = { topButton: "grey", bottomButton: "grey" };
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
