@@ -22,7 +22,6 @@ const EventsList = ({ data }) => {
 
   return (
     <CEventsList
-      style={styles.container}
       data={data}
       buttonTitle={buttonTitle}
       buttonDisabled={buttonDisabled}
@@ -35,9 +34,5 @@ const EventsList = ({ data }) => {
     ></CEventsList>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-  },
-});
+const styles = StyleSheet.create({});
 export default EventsList;

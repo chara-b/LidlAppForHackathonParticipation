@@ -74,7 +74,7 @@ function ΜyEventsScreen(props) {
           disabled={false}
         />
       </View>
-      <View style={styles.container}>
+      <View>
         <Text style={styles.subTitle}>{subTitle}</Text>
         <EventsList data={data}></EventsList>
         <Text style={styles.notificationTitle}>{notificationTitle}</Text>
@@ -84,10 +84,6 @@ function ΜyEventsScreen(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 9,
-    alignItems: "flex-start",
-  },
   buttonsContainer: {
     flex: 1,
     width: "100%",

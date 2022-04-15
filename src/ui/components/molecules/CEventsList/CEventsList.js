@@ -74,15 +74,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     backgroundColor: "blue",
+    padding: "10px",
+    width: "100%",
   },
   content: {
-    flex: 1,
-    width: "300px",
+    flex: 10,
     backgroundColor: "red",
   },
   rightVerticalButtons: {
     flex: 1,
-    alignItems: "flex-end",
     backgroundColor: "green",
   },
   button: {
@@ -93,12 +93,10 @@ const styles = StyleSheet.create({
     borderRadius: "40px",
     textAlign: "center",
     justifyContent: "center",
-    marginBottom: "10px",
+    marginTop: "10px",
   },
   eventCalendarIcon: {
-    flex: 1,
-    width: "45%",
-    height: "45%",
+    flex: 5,
     resizeMode: "contain",
   },
 });
