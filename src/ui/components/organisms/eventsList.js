@@ -2,74 +2,40 @@ import CList from "../molecules/CList/CList";
 import CButton from "../../components/atoms/CButton/CButton";
 import { Alert, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
+import CEventsList from "../molecules/CEventsList/CEventsList";
 
-const CEventsList = ({ data, isTimeOff }) => {
-  const buttonTitle = "ΥΠΟΒΟΛΗ";
-  const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [correctAnswerItem, setCorrectAnswerItem] = useState(null);
-  //const [istimeoff, setIsTimeOff] = useState();
+const EventsList = ({ data }) => {
+  const buttonTitle = "Check-in";
+  const color = "white";
+  const fontWeight = "bold";
+  const iconName = {
+    topButton: "ios-close-circle-outline",
+    bottomButton: "ios-share-social-outline",
+  };
+  const iconSize = { topButton: "10px", bottomButton: "10px" };
+  const iconColor = { topButton: "grey", bottomButton: "grey" };
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  //   useEffect(() => {
-  //     setIsTimeOff(isTimeOff);
-  //   }, [isTimeOff]);
+  useEffect(() => {}, []);
 
   const handleSelectedItem = (item) => {
     //if id !== 0 means the user selected something, so enable the button
     if (item.id !== 0) {
-      //console.log(`Διάλεξες την ${item.id}η απάντηση`);
-      setButtonDisabled(false);
-      setCorrectAnswerItem(item);
     }
   };
-  const onSubmit = () => {
-    if (isTimeOff) {
-      onTimeOff();
-    } else {
-      if (correctAnswerItem.correctAnswer) {
-        Alert.alert(
-          `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
-        );
-        console.log(
-          `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
-        );
-      } else {
-        Alert.alert(
-          `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
-        );
-        console.log(
-          `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
-        );
-      }
-    }
-  };
-  const onTimeOff = () => {
-    Alert.alert("Time's off! You can't give an answer now! ⏲️");
-    console.log("Time's off! You can't give an answer now! ⏲️");
-  };
+
   return (
-    <>
-      <CList data={data} handleSelectedItem={handleSelectedItem} />
-      <CButton
-        styles={styles.quizButton}
-        title={buttonTitle}
-        color={"white"}
-        fontWeight={"bold"}
-        onClick={onSubmit}
-        disabled={buttonDisabled}
-      />
-    </>
+    <CEventsList
+      data={data}
+      buttonTitle={buttonTitle}
+      buttonDisabled={buttonDisabled}
+      color={color}
+      fontWeight={fontWeight}
+      iconName={iconName}
+      iconSize={iconSize}
+      iconColor={iconColor}
+    ></CEventsList>
   );
 };
-const styles = StyleSheet.create({
-  quizButton: {
-    flex: 1,
-    padding: 20,
-    width: "180px",
-    backgroundColor: "rgb(26,115,232)",
-    borderRadius: "40px",
-    textAlign: "center",
-    justifyContent: "center",
-    marginBottom: "10px",
-  },
-});
-export default CEventsList;
+const styles = StyleSheet.create({});
+export default EventsList;

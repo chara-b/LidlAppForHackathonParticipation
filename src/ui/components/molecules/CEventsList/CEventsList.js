@@ -1,7 +1,8 @@
-import { FlatList, View } from "react-native";
+import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { useEffect, useState } from "react";
 import { Foundation } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import CButton from "../../atoms/CButton/CButton";
 
 const CEventsList = ({
   data,
@@ -16,11 +17,11 @@ const CEventsList = ({
   //   const [selectedItem, setSelectedItem] = useState({
   //     id: 0,
   //   });
-
+  const onCheckIn = () => {};
   const renderItem = ({ item }) => {
     return (
       <View style={styles.container}>
-        <Image source={require(item.icon)} />
+        <Image source={require("../../../../assets/1-calendar-icon.png")} />
         <View style={styles.content}>
           <Text>{item.time}</Text>
           <Text>{item.city}</Text>
@@ -30,13 +31,21 @@ const CEventsList = ({
             title={buttonTitle}
             color={color}
             fontWeight={fontWeight}
-            onClick={onSubmit}
+            onClick={onCheckIn}
             disabled={buttonDisabled}
           />
         </View>
         <View style={styles.rightVerticalButtons}>
-          <Ionicons name={iconName} size={iconSize} color={iconColor} />
-          <Ionicons name={iconName} size={iconSize} color={iconColor} />
+          <Ionicons
+            name={iconName.topButton}
+            size={iconSize.topButton}
+            color={iconColor.topButton}
+          />
+          <Ionicons
+            name={iconName.bottomButton}
+            size={iconSize.bottomButton}
+            color={iconColor.bottomButton}
+          />
         </View>
       </View>
     );
