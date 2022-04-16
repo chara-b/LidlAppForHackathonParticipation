@@ -4,11 +4,12 @@ import CMenu from "./src/ui/components/molecules/CMenu/CMenu";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import ΜyEventsScreen from "./src/ui/screens/myEventsScreen";
 import RefuserLevelSuccessScreen from "./src/ui/screens/refuserLevelSuccessScreen";
+import FinalScreen from "./src/ui/screens/finalScreen";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <ΜyEventsScreen />
+      <FinalScreen />
       <CMenu />
     </SafeAreaView>
   );
