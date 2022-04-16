@@ -32,6 +32,7 @@ const CEventsList = ({
   //today = mm + "/" + dd + "/" + yyyy;
 
   const renderItem = ({ item }) => {
+    const disabled = +dd === +item.date.split("/")[0] ? false : true;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -67,12 +68,15 @@ const CEventsList = ({
             {item.task}
           </Text>
           <CButton
-            styles={styles.button}
+            styles={[
+              styles.button,
+              { backgroundColor: disabled ? "grey" : "rgb(26,115,232)" },
+            ]}
             title={buttonTitle}
             color={color}
             fontWeight={fontWeight}
             onClick={onClick}
-            disabled={+dd === +item.date.split("/")[0] ? false : true}
+            disabled={disabled}
           />
         </View>
         <View style={styles.rightVerticalButtons}>
@@ -120,9 +124,8 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    padding: 10,
-    width: "100px",
-    backgroundColor: "rgb(26,115,232)",
+    padding: 9,
+    width: "180px",
     borderRadius: "40px",
     textAlign: "center",
     justifyContent: "center",

@@ -38,7 +38,7 @@ function ΜyEventsScreen(props) {
   const buttonCheckInTitle = "Check-in";
   const subTitle = "Εκδηλώσεις που θα πάω";
   const notificationTitle =
-    "Παρακαλούμε προβείτε σε check-in την ημέρα και ώρα έναρξης της κάθε εκδήλωσης";
+    "Παρακαλούμε προβείτε στην κατάλληλη ενέργεια την ημέρα της κάθε εκδήλωσης";
   const [buttonState, setButtonState] = useState({
     btnSelected: "left",
   });
@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: "10px",
     border: "2px solid black",
-    boxShadow: "1px 6px rgb(105,105,105)",
   },
   rightButtonSelected: {
     flex: 1,
@@ -139,7 +138,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: "10px",
     border: "2px solid black",
-    boxShadow: "1px 6px rgb(105,105,105)",
   },
 });
 

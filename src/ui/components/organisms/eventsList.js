@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CEventsList from "../molecules/CEventsList/CEventsList";
 
 const EventsList = ({ data }) => {
-  const buttonTitle = "Check-in";
+  const buttonTitle = "Κωδικός Συμμετοχής";
   const color = "white";
   const fontWeight = "bold";
   const iconName = {
