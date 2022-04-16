@@ -12,7 +12,7 @@ const data = [
     time: "09.00πμ - 11.00πμ",
     city: "Παραλία Αλίμου, Αθήνα",
     task: "Καθαρισμός Ακτής",
-    date: "16/4",
+    date: "18 Απρ",
   },
   {
     id: "2",
@@ -20,7 +20,7 @@ const data = [
     time: "10.00πμ - 12.00μμ",
     city: "Μέσω Google Meet",
     task: "Πλαστικά στις Ακτές",
-    date: "18/4",
+    date: "17 Απρ",
   },
   {
     id: "3",
@@ -28,7 +28,7 @@ const data = [
     time: "1.00πμ - 13.00μμ",
     city: "Μέσω Google Meet",
     task: "Βιώσιμη Ανάπτυξη",
-    date: "19/4",
+    date: "19 Απρ",
   },
 ];
 function ΜyEventsScreen(props) {

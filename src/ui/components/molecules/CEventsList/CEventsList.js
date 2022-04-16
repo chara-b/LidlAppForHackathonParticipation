@@ -32,7 +32,7 @@ const CEventsList = ({
   //today = mm + "/" + dd + "/" + yyyy;
 
   const renderItem = ({ item }) => {
-    const disabled = +dd === +item.date.split("/")[0] ? false : true;
+    const disabled = +dd === +item.date.split(" ")[0] ? false : true;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -42,15 +42,17 @@ const CEventsList = ({
           <View
             style={{
               position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
+              top: "35%",
+              left: "35%",
+              right: "35%",
+              bottom: "35%",
               justifyContent: "center",
               alignItems: "center",
+              width: "30px",
+              textAlign: "center",
             }}
           >
-            <Text>{item.date}</Text>
+            <Text style={{ fontWeight: "bold" }}>{item.date}</Text>
           </View>
         </ImageBackground>
         {/* <Image
