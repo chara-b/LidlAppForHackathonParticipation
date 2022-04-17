@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, Image, Text, StatusBar } from "react-native";
+import { StyleSheet, Image, Text, StatusBar, View } from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizList";
 
@@ -33,7 +33,7 @@ function QuizScreen({ navigation }) {
   const quizSubQuestionTitle = "Επέλεξε όλες τις σωστές απαντήσεις";
   const [isTimeOff, setIsTimeOff] = useState(); //becomes true after time is off, so now we can change the text printed in the console if button is pressed although the time has run out! we first pass this variable here inside quizlist as a prop
   return (
-    <>
+    <View style={styles.container}>
       <CHeader
         //title={headerTitle}
         timeOff={(timeoff) => setIsTimeOff(timeoff)}
@@ -45,11 +45,15 @@ function QuizScreen({ navigation }) {
       <Text style={styles.quizQuestion}>{quizQuestion}</Text>
       <Text style={styles.quizSubQuestionTitle}>{quizSubQuestionTitle}</Text>
       <QuizList data={data} isTimeOff={isTimeOff} navigation={navigation} />
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   quizBanner: {
     flex: 1,
     width: "90%",

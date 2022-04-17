@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Text, Alert } from "react-native";
+import { StyleSheet, Image, Text } from "react-native";
 import CButton from "../components/atoms/CButton/CButton";
 
 function RefuserLevelSuccessScreen({ navigation }) {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   levelUpButton: {
     flex: 1,
     padding: 20,
-    width: "180px",
+    width: "100%",
     backgroundColor: "rgb(26,115,232)",
     borderRadius: "40px",
     textAlign: "center",
