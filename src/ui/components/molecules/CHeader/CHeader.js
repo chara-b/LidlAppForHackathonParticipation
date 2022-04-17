@@ -7,11 +7,11 @@ const CHeader = ({ title, timeOff }) => {
     <View
       style={{
         flexDirection: "row",
-        height: 70,
-        padding: 20,
+        height: 20,
+        padding: 10,
         width: "100%",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
       }}
     >
       <Text style={[styles.title]}>{title}</Text>

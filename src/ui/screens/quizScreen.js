@@ -25,7 +25,7 @@ const data = [
     correctAnswer: false,
   },
 ];
-function QuizScreen(props) {
+function QuizScreen({ navigation }) {
   const headerTitle = "Quiz";
 
   const quizQuestion =
@@ -35,7 +35,7 @@ function QuizScreen(props) {
   return (
     <>
       <CHeader
-        title={headerTitle}
+        //title={headerTitle}
         timeOff={(timeoff) => setIsTimeOff(timeoff)}
       />
       <Image
@@ -44,7 +44,7 @@ function QuizScreen(props) {
       />
       <Text style={styles.quizQuestion}>{quizQuestion}</Text>
       <Text style={styles.quizSubQuestionTitle}>{quizSubQuestionTitle}</Text>
-      <QuizList data={data} isTimeOff={isTimeOff} />
+      <QuizList data={data} isTimeOff={isTimeOff} navigation={navigation} />
     </>
   );
 }

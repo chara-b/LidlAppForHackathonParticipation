@@ -5,40 +5,11 @@ import CButton from "../components/atoms/CButton/CButton";
 import { useState } from "react";
 import CEventsList from "../components/organisms/eventsList";
 import EventsList from "../components/organisms/eventsList";
-const data = [
-  {
-    id: "1",
-    icon: "../assets/25-calendar-icon.png",
-    time: "09.00πμ - 11.00πμ",
-    city: "Παραλία Αλίμου, Αθήνα",
-    task: "Καθαρισμός Ακτής",
-    date: "18 Απρ",
-  },
-  {
-    id: "2",
-    icon: "../assets/30-calendar-icon.png",
-    time: "10.00πμ - 12.00μμ",
-    city: "Μέσω Google Meet",
-    task: "Πλαστικά στις Ακτές",
-    date: "17 Απρ",
-  },
-  {
-    id: "3",
-    icon: "../assets/1-calendar-icon.png",
-    time: "1.00πμ - 13.00μμ",
-    city: "Μέσω Google Meet",
-    task: "Βιώσιμη Ανάπτυξη",
-    date: "19 Απρ",
-  },
-];
-function ΜyEventsScreen({ navigation }) {
-  const headerTitle = "Εκδηλώσεις";
+
+function JoinMeetingScreen({ navigation }) {
   const buttonLeftTitle = "Προσεχώς";
   const buttonRightTitle = "Οι εκδηλώσεις μου";
 
-  const subTitle = "Εκδηλώσεις που θα πάω";
-  const notificationTitle =
-    "Παρακαλούμε προβείτε στην κατάλληλη ενέργεια την ημέρα της κάθε εκδήλωσης";
   const [buttonState, setButtonState] = useState({
     btnSelected: "left",
   });
@@ -50,7 +21,6 @@ function ΜyEventsScreen({ navigation }) {
   };
   return (
     <>
-      <CHeader title={headerTitle} timeOff={null} />
       <View style={styles.buttonsContainer}>
         <CButton
           styles={
@@ -78,15 +48,21 @@ function ΜyEventsScreen({ navigation }) {
         />
       </View>
       <View>
-        <Text style={styles.subTitle}>{subTitle}</Text>
-        <EventsList data={data} navigation={navigation}></EventsList>
-        <Text style={styles.notificationTitle}>{notificationTitle}</Text>
+        <Image
+          source={require("../../assets/join.png")}
+          style={styles.joinscreen}
+        />
       </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  joinscreen: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
   buttonsContainer: {
     width: "100%",
     height: "8%",
@@ -141,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ΜyEventsScreen;
+export default JoinMeetingScreen;

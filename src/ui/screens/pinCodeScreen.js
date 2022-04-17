@@ -10,7 +10,7 @@ import CButton from "../components/atoms/CButton/CButton";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 
-function PinCodeScreen({ codeProp }) {
+function PinCodeScreen({ codeProp, navigation }) {
   const description =
     "Παρακαλούμε καταχωρείστε το 4 ψήφιο κωδικό που λάβατε κατά τη διάρκεια του event";
   const buttonTitle = "ΕΠΙΣΤΡΟΦΗ";
@@ -18,6 +18,8 @@ function PinCodeScreen({ codeProp }) {
   const onSubmit = () => {
     if (code === codeProp) {
       //navigate to success screen...
+
+      navigation.navigate("QuizScreen");
     }
   };
   return (

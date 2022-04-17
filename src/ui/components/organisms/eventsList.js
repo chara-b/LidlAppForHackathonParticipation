@@ -4,7 +4,7 @@ import { Alert, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
 import CEventsList from "../molecules/CEventsList/CEventsList";
 
-const EventsList = ({ data }) => {
+const EventsList = ({ data, navigation }) => {
   const buttonTitle = "Κωδικός Συμμετοχής";
   const color = "white";
   const fontWeight = "bold";
@@ -15,7 +15,9 @@ const EventsList = ({ data }) => {
   const iconSize = { topButton: "20px", bottomButton: "20px" };
   const iconColor = { topButton: "grey", bottomButton: "grey" };
 
-  const onCheckIn = () => {};
+  const onCheckIn = () => {
+    navigation.navigate("Συμμετοχή");
+  };
 
   return (
     <CEventsList

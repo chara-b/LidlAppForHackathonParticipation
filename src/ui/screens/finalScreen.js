@@ -1,6 +1,6 @@
 import { StyleSheet, Image, View } from "react-native";
 
-function FinalScreen(props) {
+function FinalScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image

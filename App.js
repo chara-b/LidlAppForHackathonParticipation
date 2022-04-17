@@ -9,6 +9,8 @@ import PinCodeScreen from "./src/ui/screens/pinCodeScreen";
 import RecyclerLevelSuccessScreen from "./src/ui/screens/recyclerLevelSuccessScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import TryAgainScreen from "./src/ui/screens/tryAgainScreen";
+import JoinMeetingScreen from "./src/ui/screens/joinMeetingScreen";
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
@@ -16,13 +18,43 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="QuizScreen"
+          name="Quiz"
           component={QuizScreen}
           //  options={{ title: "Welcome" }}
         />
         <Stack.Screen
-          name="MyEventsScreen"
+          name="Ευχαριστούμε"
+          component={FinalScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Εκδηλώσεις"
           component={ΜyEventsScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Κωδικός"
+          component={PinCodeScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Επίπεδο Recycler"
+          component={RecyclerLevelSuccessScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Επίπεδο Refuser"
+          component={RefuserLevelSuccessScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Δοκίμασε Ξανά"
+          component={TryAgainScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Συμμετοχή"
+          component={JoinMeetingScreen}
           //  options={{ title: "Welcome" }}
         />
         {/* <QuizScreen /> */}

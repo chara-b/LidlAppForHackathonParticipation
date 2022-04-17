@@ -1,7 +1,7 @@
 import { StyleSheet, Image, Text, Alert } from "react-native";
 import CButton from "../components/atoms/CButton/CButton";
 
-function RecyclerLevelSuccessScreen(props) {
+function RecyclerLevelSuccessScreen({ navigation }) {
   const buttonTitle = "Συνέχεια";
   const notificationTitle =
     "Πλέον έχεις πρόσβαση σε μοναδικές προσφορές και κουπόνια ανακυκλώσιμων προϊόντων!";
