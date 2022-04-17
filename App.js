@@ -7,13 +7,30 @@ import RefuserLevelSuccessScreen from "./src/ui/screens/refuserLevelSuccessScree
 import FinalScreen from "./src/ui/screens/finalScreen";
 import PinCodeScreen from "./src/ui/screens/pinCodeScreen";
 import RecyclerLevelSuccessScreen from "./src/ui/screens/recyclerLevelSuccessScreen";
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <PinCodeScreen />
+    // <SafeAreaView style={styles.container}>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="QuizScreen"
+          component={QuizScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="MyEventsScreen"
+          component={ΜyEventsScreen}
+          //  options={{ title: "Welcome" }}
+        />
+        {/* <QuizScreen /> */}
+      </Stack.Navigator>
       <CMenu />
-    </SafeAreaView>
+    </NavigationContainer>
+
+    // {/* </SafeAreaView> */}
   );
 }
 

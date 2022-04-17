@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Button } from "react-native";
 import CButton from "../../atoms/CButton/CButton";
 
-const CMenu = ({}) => {
+const CMenu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <CButton
@@ -53,6 +53,7 @@ const CMenu = ({}) => {
         iconName={"indent-more"}
         iconSize={40}
         iconColor={"grey"}
+        onClick={navigation.navigate("MyEventsScreen")}
       />
     </View>
   );
