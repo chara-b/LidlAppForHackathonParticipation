@@ -16,7 +16,7 @@ const EventsList = ({ data, navigation }) => {
   const iconColor = { topButton: "grey", bottomButton: "grey" };
 
   const onCheckIn = () => {
-    navigation.navigate("Συμμετοχή");
+    navigation.navigate("Εκδηλώσεις.");
   };
 
   return (

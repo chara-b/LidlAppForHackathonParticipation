@@ -24,7 +24,6 @@ function PinCodeScreen({ codeProp, navigation }) {
   };
   return (
     <View style={styles.container}>
-      <Ionicons name="close" size={24} color="black" style={styles.closeIcon} />
       <Text style={styles.description}>{description}</Text>
       <TextInput
         style={styles.input}
@@ -48,12 +47,12 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     backgroundColor: "rgb(37,84,160)",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     alignContent: "center",
   },
   button: {
     flex: 1,
-    padding: 20,
+    padding: 15,
     width: "50%",
     backgroundColor: "white",
     borderRadius: "40px",
@@ -67,9 +66,11 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
+    width: 100,
     margin: 12,
     borderWidth: 1,
     padding: 3,
+    backgroundColor: "white",
   },
 });
 

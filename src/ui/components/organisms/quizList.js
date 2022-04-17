@@ -33,7 +33,7 @@ const QuizList = ({ data, isTimeOff, navigation }) => {
         console.log(
           `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
         );
-        navigation.navigate("Εκδηλώσεις");
+        navigation.navigate("Επίπεδο Recycler");
       } else {
         //   Alert.alert(
         //    `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`

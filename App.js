@@ -14,8 +14,7 @@ import JoinMeetingScreen from "./src/ui/screens/joinMeetingScreen";
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    // <SafeAreaView style={styles.container}>
-    <NavigationContainer>
+    <NavigationContainer style={styles.container}>
       <Stack.Navigator>
         <Stack.Screen
           name="Quiz"
@@ -53,7 +52,7 @@ export default function App() {
           //  options={{ title: "Welcome" }}
         />
         <Stack.Screen
-          name="Συμμετοχή"
+          name="Εκδηλώσεις."
           component={JoinMeetingScreen}
           //  options={{ title: "Welcome" }}
         />
@@ -61,8 +60,6 @@ export default function App() {
       </Stack.Navigator>
       <CMenu />
     </NavigationContainer>
-
-    // {/* </SafeAreaView> */}
   );
 }
 

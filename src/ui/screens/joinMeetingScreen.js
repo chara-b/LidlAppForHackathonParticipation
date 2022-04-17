@@ -1,4 +1,12 @@
-import { StyleSheet, Image, View, Text, StatusBar, Alert } from "react-native";
+import {
+  StyleSheet,
+  Image,
+  View,
+  Text,
+  StatusBar,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 import CHeader from "../components/molecules/CHeader/CHeader";
 import QuizList from "../components/organisms/quizList";
 import CButton from "../components/atoms/CButton/CButton";
@@ -18,6 +26,9 @@ function JoinMeetingScreen({ navigation }) {
   };
   const onClickRightButton = () => {
     setButtonState({ btnSelected: "right" });
+  };
+  const onPress = () => {
+    navigation.navigate("Κωδικός");
   };
   return (
     <>
@@ -48,10 +59,12 @@ function JoinMeetingScreen({ navigation }) {
         />
       </View>
       <View>
-        <Image
-          source={require("../../assets/join.png")}
-          style={styles.joinscreen}
-        />
+        <TouchableOpacity onPress={onPress()}>
+          <Image
+            source={require("../../assets/join.png")}
+            style={styles.joinscreen}
+          />
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -59,9 +72,11 @@ function JoinMeetingScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   joinscreen: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
+    width: "390px",
+    height: "390px",
+    justifyContent: "center",
+    resizeMode: "contain",
+    alignItems: "center",
   },
   buttonsContainer: {
     width: "100%",
@@ -69,19 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
-  subTitle: {
-    flex: 1,
-    color: "rgb(25,25,112)",
-    fontWeight: "bold",
-    marginBottom: "10px",
-    marginLeft: "25px",
-  },
-  notificationTitle: {
-    flex: 1,
-    color: "rgb(105,105,105)",
-    fontWeight: "bold",
-    padding: "20px",
-  },
+
   topButtons: {
     flex: 1,
     width: "170px",

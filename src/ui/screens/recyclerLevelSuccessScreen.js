@@ -19,7 +19,7 @@ function RecyclerLevelSuccessScreen({ navigation }) {
         title={buttonTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={Alert.alert("Congrats!!!")}
+        onClick={navigation.navigate("Εκδηλώσεις")}
       />
     </>
   );

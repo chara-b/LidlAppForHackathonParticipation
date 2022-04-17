@@ -50,7 +50,7 @@ function ΜyEventsScreen({ navigation }) {
   };
   return (
     <>
-      <CHeader title={headerTitle} timeOff={null} />
+      {/* <CHeader title={headerTitle} timeOff={null} /> */}
       <View style={styles.buttonsContainer}>
         <CButton
           styles={
