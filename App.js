@@ -4,7 +4,6 @@ import CMenu from "./src/ui/components/molecules/CMenu/CMenu";
 import { StyleSheet } from "react-native";
 import ΜyEventsScreen from "./src/ui/screens/myEventsScreen";
 
-import FinalScreen from "./src/ui/screens/finalScreen";
 import PinCodeScreen from "./src/ui/screens/pinCodeScreen";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -17,7 +16,6 @@ export default function App() {
     <NavigationContainer style={styles.container}>
       <Stack.Navigator>
         <Stack.Screen name="Quiz" component={QuizScreen} />
-        <Stack.Screen name="Ευχαριστούμε" component={FinalScreen} />
         <Stack.Screen name="Εκδηλώσεις" component={ΜyEventsScreen} />
         <Stack.Screen name="Κωδικός" component={PinCodeScreen} />
         <Stack.Screen
