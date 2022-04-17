@@ -11,7 +11,7 @@ import RecyclerLevelSuccessScreen from "./src/ui/screens/recyclerLevelSuccessScr
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <RecyclerLevelSuccessScreen />
+      <PinCodeScreen />
       <CMenu />
     </SafeAreaView>
   );
