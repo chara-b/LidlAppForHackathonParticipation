@@ -1,13 +1,11 @@
 import {
   FlatList,
-  Image,
   ImageBackground,
   StyleSheet,
   Text,
   View,
 } from "react-native";
-import { useEffect, useState } from "react";
-import { Foundation } from "@expo/vector-icons";
+
 import { Ionicons } from "@expo/vector-icons";
 import CButton from "../../atoms/CButton/CButton";
 
@@ -96,17 +94,12 @@ const CEventsList = ({
       </View>
     );
   };
-  //   useEffect(() => {
-  //     // each time an item from the list is selected, this event is fired to get the changes from this component and send them to parent that we need the logic of enabling the button of the quiz if an answer is selected and then later check if it is the correct one...
-  //     handleSelectedItem(selectedItem); // this function is just a prop coming from the parent QuizList!
-  //   }, [selectedItem]);
 
   return (
     <FlatList
       data={data}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
-      // extraData={selectedItem}
     />
   );
 };

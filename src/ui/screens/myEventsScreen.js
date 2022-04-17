@@ -1,9 +1,8 @@
-import { StyleSheet, Image, View, Text, StatusBar, Alert } from "react-native";
-import CHeader from "../components/molecules/CHeader/CHeader";
-import QuizList from "../components/organisms/quizList";
+import { StyleSheet, View, Text } from "react-native";
+
 import CButton from "../components/atoms/CButton/CButton";
 import { useState } from "react";
-import CEventsList from "../components/organisms/eventsList";
+
 import EventsList from "../components/organisms/eventsList";
 const data = [
   {
@@ -32,7 +31,6 @@ const data = [
   },
 ];
 function ΜyEventsScreen({ navigation }) {
-  const headerTitle = "Εκδηλώσεις";
   const buttonLeftTitle = "Προσεχώς";
   const buttonRightTitle = "Οι εκδηλώσεις μου";
 
@@ -50,7 +48,6 @@ function ΜyEventsScreen({ navigation }) {
   };
   return (
     <>
-      {/* <CHeader title={headerTitle} timeOff={null} /> */}
       <View style={styles.buttonsContainer}>
         <CButton
           styles={

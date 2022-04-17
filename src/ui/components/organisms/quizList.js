@@ -1,17 +1,12 @@
 import CList from "../molecules/CList/CList";
 import CButton from "../../components/atoms/CButton/CButton";
-import { Alert, StyleSheet } from "react-native";
-import { useEffect, useState } from "react";
+import { StyleSheet } from "react-native";
+import { useState } from "react";
 
 const QuizList = ({ data, isTimeOff, navigation }) => {
   const buttonTitle = "ΥΠΟΒΟΛΗ";
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [correctAnswerItem, setCorrectAnswerItem] = useState(null);
-  //const [istimeoff, setIsTimeOff] = useState();
-
-  //   useEffect(() => {
-  //     setIsTimeOff(isTimeOff);
-  //   }, [isTimeOff]);
 
   const handleSelectedItem = (item) => {
     //if id !== 0 means the user selected something, so enable the button
@@ -24,7 +19,6 @@ const QuizList = ({ data, isTimeOff, navigation }) => {
   const onSubmit = () => {
     if (isTimeOff) {
       onTimeOff();
-      navigation.navigate("Δοκίμασε Ξανά");
     } else {
       if (correctAnswerItem.correctAnswer) {
         // Alert.alert(
@@ -33,7 +27,7 @@ const QuizList = ({ data, isTimeOff, navigation }) => {
         console.log(
           `Η ${correctAnswerItem.id}η είναι η σωστή απάντηση! Συγχαρητήρια! 🥳`
         );
-        navigation.navigate("Επίπεδο Recycler");
+        navigation.navigate("Εκδηλώσεις");
       } else {
         //   Alert.alert(
         //    `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
@@ -41,7 +35,6 @@ const QuizList = ({ data, isTimeOff, navigation }) => {
         console.log(
           `Η ${correctAnswerItem.id}η δεν είναι η σωστή απάντηση... 😞`
         );
-        navigation.navigate("Δοκίμασε Ξανά");
       }
     }
   };

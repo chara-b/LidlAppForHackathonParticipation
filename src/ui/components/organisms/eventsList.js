@@ -1,7 +1,5 @@
-import CList from "../molecules/CList/CList";
-import CButton from "../../components/atoms/CButton/CButton";
-import { Alert, StyleSheet } from "react-native";
-import { useEffect, useState } from "react";
+import { StyleSheet } from "react-native";
+
 import CEventsList from "../molecules/CEventsList/CEventsList";
 
 const EventsList = ({ data, navigation }) => {
@@ -16,7 +14,7 @@ const EventsList = ({ data, navigation }) => {
   const iconColor = { topButton: "grey", bottomButton: "grey" };
 
   const onCheckIn = () => {
-    navigation.navigate("Εκδηλώσεις.");
+    navigation.navigate("Κωδικός");
   };
 
   return (

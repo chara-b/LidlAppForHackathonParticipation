@@ -19,7 +19,6 @@ function RefuserLevelSuccessScreen({ navigation }) {
         title={buttonTitle}
         color={"white"}
         fontWeight={"bold"}
-        onClick={Alert.alert("Congrats!!!")}
       />
     </>
   );
